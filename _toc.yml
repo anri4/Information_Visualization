@@ -2,7 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: docs/introduction
+root: docs/home
 chapters:
+- file: docs/notebook
+- file: docs/introduction
 - file: docs/3page
 - file: docs/main
