@@ -5,6 +5,6 @@ format: jb-book
 root: docs/home
 chapters:
 - file: docs/notebook
-- file: docs/main
+- file: docs/introductionk
 - file: docs/3page
-- file: docs/introduction
+- file: docs/main
