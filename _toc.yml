@@ -4,7 +4,7 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: docs/notebook
-- file: docs/introduction
-- file: docs/3page
+- file: docs/dataset_preprocessing
 - file: docs/main
+- file: docs/reflection
+- file: docs/work_distribution
