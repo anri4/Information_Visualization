@@ -39,7 +39,6 @@ fig, ax1 = plt.subplots(figsize=(12, 6))
 
 # Position of bars on x-axis
 bar_width = 0.55
-index = np.arange(len(years)) * 1.5  # Increase the spacing between groups of bars
 
 # Plotting the bars for unemployment rate
 bar1 = ax1.bar(index - bar_width/2, unemployment_rate, bar_width, label='Unemployment Rate (%)', color='b')
@@ -75,12 +74,12 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[5], line 25[0m
-[1;32m     23[0m [38;5;66;03m# Position of bars on x-axis[39;00m
+Cell [0;32mIn[5], line 27[0m
 [1;32m     24[0m bar_width [38;5;241m=[39m [38;5;241m0.55[39m
-[0;32m---> 25[0m index [38;5;241m=[39m [43mnp[49m[38;5;241m.[39marange([38;5;28mlen[39m(years)) [38;5;241m*[39m [38;5;241m1.5[39m  [38;5;66;03m# Increase the spacing between groups of bars[39;00m
-[1;32m     27[0m [38;5;66;03m# Plotting the bars for unemployment rate[39;00m
-[1;32m     28[0m bar1 [38;5;241m=[39m ax1[38;5;241m.[39mbar(index [38;5;241m-[39m bar_width[38;5;241m/[39m[38;5;241m2[39m, unemployment_rate, bar_width, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mUnemployment Rate ([39m[38;5;124m%[39m[38;5;124m)[39m[38;5;124m'[39m, color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mb[39m[38;5;124m'[39m)
+[1;32m     26[0m [38;5;66;03m# Plotting the bars for unemployment rate[39;00m
+[0;32m---> 27[0m bar1 [38;5;241m=[39m ax1[38;5;241m.[39mbar([43mindex[49m [38;5;241m-[39m bar_width[38;5;241m/[39m[38;5;241m2[39m, unemployment_rate, bar_width, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mUnemployment Rate ([39m[38;5;124m%[39m[38;5;124m)[39m[38;5;124m'[39m, color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mb[39m[38;5;124m'[39m)
+[1;32m     29[0m [38;5;66;03m# Create a second y-axis[39;00m
+[1;32m     30[0m ax2 [38;5;241m=[39m ax1[38;5;241m.[39mtwinx()
 
-[0;31mNameError[0m: name 'np' is not defined
+[0;31mNameError[0m: name 'index' is not defined
 
