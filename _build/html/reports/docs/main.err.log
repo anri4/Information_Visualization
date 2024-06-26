@@ -15,71 +15,51 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Load the datasets
-minimum_wage_df = pd.read_csv("minimum_wage_data.csv")
-consumer_spending_df = pd.read_csv("netherlands-unemployment-rate.csv")
+# Read the data
+data = pd.read_csv('minimumloon_werknemers.csv')
 
-# Convert 'year' column to integers in both datasets
-minimum_wage_df['year'] = minimum_wage_df['year'].astype(int)
-consumer_spending_df['year'] = consumer_spending_df['year'].astype(int)
+# Convert the data to a DataFrame
+df = pd.DataFrame(data)
 
-# Merge the datasets on 'year'
-merged_df = pd.merge(consumer_spending_df, minimum_wage_df, on='year')
+# Create the bar chart using Plotly
+fig = px.bar(
+    df,
+    x="age",
+    y="percentage_minimum_wage",
+    title="Percentage of Workers Working for Minimum Wage by Age Range in 2018 in the Netherlands",
+    labels={"percentage_minimum_wage": "Percentage Minimum Wage (%)", "Age Range": "Age Range"}
+)
 
-# Filter data from 2007 onwards
-merged_df = merged_df[merged_df['year'] >= 2007]
+# Update the bar chart to remove the legend and set all bars to the same color
+fig.update_traces(marker_color='#ff8f40', showlegend=False)
 
-# Prepare the data for plotting
-years = merged_df['year']
-unemployment_rate = merged_df[' Unemployment Rate (%)']
-minimum_wage = merged_df['minimum wage per month (euro)']
+# Update layout for better presentation
+fig.update_layout(
+    xaxis_title='Age Range',
+    yaxis_title='Percentage Minimum Wage (%)',
+    title="Percentage of Workers Working for Minimum Wage by Age Range in 2018 in the Netherlands",
+    margin=dict(l=0, r=0, t=50, b=0)
+)
 
-# Plotting the dual-axis bar graph
-fig, ax1 = plt.subplots(figsize=(12, 6))
-
-# Position of bars on x-axis
-bar_width = 0.55
-
-# Plotting the bars for unemployment rate
-bar1 = ax1.bar(index - bar_width/2, unemployment_rate, bar_width, label='Unemployment Rate (%)', color='b')
-
-# Create a second y-axis
-ax2 = ax1.twinx()
-
-# Plotting the bars for minimum wage
-bar2 = ax2.bar(index + bar_width/2, minimum_wage, bar_width, label='Minimum Wage (euro/month)', color='g')
-
-# Adding labels, title, and customizing
-ax1.set_xlabel('Year')
-ax1.set_ylabel('Unemployment Rate (%)', color='b')
-ax2.set_ylabel('Minimum Wage (euro/month)', color='g')
-ax1.set_title('Unemployment Rate vs. Minimum Wage over Years')
-ax1.set_xticks(index)
-ax1.set_xticklabels(years, rotation=45)
-
-# Set tick parameters to match the y-axis label colors
-ax1.tick_params(axis='y', labelcolor='b')
-ax2.tick_params(axis='y', labelcolor='g')
-
-# Adjust legend positions
-ax1.legend(loc='upper left')
-ax2.legend(loc='upper right')
-
-# Adjust layout for better fit
-fig.tight_layout()
-plt.show()
-
+# Show the plot
+fig.show()
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[5], line 27[0m
-[1;32m     24[0m bar_width [38;5;241m=[39m [38;5;241m0.55[39m
-[1;32m     26[0m [38;5;66;03m# Plotting the bars for unemployment rate[39;00m
-[0;32m---> 27[0m bar1 [38;5;241m=[39m ax1[38;5;241m.[39mbar([43mindex[49m [38;5;241m-[39m bar_width[38;5;241m/[39m[38;5;241m2[39m, unemployment_rate, bar_width, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mUnemployment Rate ([39m[38;5;124m%[39m[38;5;124m)[39m[38;5;124m'[39m, color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mb[39m[38;5;124m'[39m)
-[1;32m     29[0m [38;5;66;03m# Create a second y-axis[39;00m
-[1;32m     30[0m ax2 [38;5;241m=[39m ax1[38;5;241m.[39mtwinx()
+Cell [0;32mIn[3], line 8[0m
+[1;32m      5[0m df [38;5;241m=[39m pd[38;5;241m.[39mDataFrame(data)
+[1;32m      7[0m [38;5;66;03m# Create the bar chart using Plotly[39;00m
+[0;32m----> 8[0m fig [38;5;241m=[39m [43mpx[49m[38;5;241m.[39mbar(
+[1;32m      9[0m     df,
+[1;32m     10[0m     x[38;5;241m=[39m[38;5;124m"[39m[38;5;124mage[39m[38;5;124m"[39m,
+[1;32m     11[0m     y[38;5;241m=[39m[38;5;124m"[39m[38;5;124mpercentage_minimum_wage[39m[38;5;124m"[39m,
+[1;32m     12[0m     title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mPercentage of Workers Working for Minimum Wage by Age Range in 2018 in the Netherlands[39m[38;5;124m"[39m,
+[1;32m     13[0m     labels[38;5;241m=[39m{[38;5;124m"[39m[38;5;124mpercentage_minimum_wage[39m[38;5;124m"[39m: [38;5;124m"[39m[38;5;124mPercentage Minimum Wage ([39m[38;5;124m%[39m[38;5;124m)[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mAge Range[39m[38;5;124m"[39m: [38;5;124m"[39m[38;5;124mAge Range[39m[38;5;124m"[39m}
+[1;32m     14[0m )
+[1;32m     16[0m [38;5;66;03m# Update the bar chart to remove the legend and set all bars to the same color[39;00m
+[1;32m     17[0m fig[38;5;241m.[39mupdate_traces(marker_color[38;5;241m=[39m[38;5;124m'[39m[38;5;124m#ff8f40[39m[38;5;124m'[39m, showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
 
-[0;31mNameError[0m: name 'index' is not defined
+[0;31mNameError[0m: name 'px' is not defined
 
