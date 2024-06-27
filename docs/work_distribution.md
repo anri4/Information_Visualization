@@ -1,5 +1,5 @@
 # Work distribution
-At the outset of the project, we established a clear communication plan that included weekly video meetings and daily check-ins via a messaging app. We used a project management tool to assign tasks, track progress, and set deadlines. This ensured that everyone was on the same page and that tasks were completed in a timely manner. We also created shared documents and repositories for our data, code, and reports, allowing for easy access and collaborative editing.
+We established a clear communication plan that included bi-weekly meetings(twice a wekk) and daily check-ins via a messaging app.  This ensured that everyone was on the same page and that tasks were completed in a timely manner. We also created shared documents and repositories for our data, code, and reports, allowing for easy access and collaborative editing.
 
 We approached the project in several stages:
 
