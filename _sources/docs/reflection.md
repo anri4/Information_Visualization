@@ -6,8 +6,6 @@ In the final weeks of our project our team gathered with other groups for peer f
 
 
 Below is a list of the feedback provided from the other groups as well as the TA:
-
-- Comparing the maps was not easy.
 - Instead of unemplyoment we could look at open vacancies.
 - Using 2018 as a cut-off data so all graphs have the same end date.
 - Combine the two world maps in one with one slider.
