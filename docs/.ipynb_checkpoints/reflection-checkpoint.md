@@ -11,7 +11,7 @@ Below is a list of the feedback provided from the other groups as well as the TA
 - Instead of unemplyoment we could look at open vacancies.
 - Using 2018 as a cut-off data so all graphs have the same end date.
 - Combine the two world maps in one with one slider.
-- Adding scientific sources where necessary
+- Adding scientific sources where necessary.
 
 
 We took this feedback seriously and made several improvements to our project.
