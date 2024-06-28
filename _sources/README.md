@@ -1,5 +1,3 @@
-![gender pay gap banner](./docs/images/logo.jpg?)
-
 
 Information Visualisation: Debates about increasing minimum wage in the Netherlands
 
